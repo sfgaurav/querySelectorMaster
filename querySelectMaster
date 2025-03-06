@@ -1,0 +1,22 @@
+HTML 
+import { LightningElement } from 'lwc';
+
+export default class Lwc_welcome extends LightningElement {
+    
+    eName  
+    handlsubmit(event) {
+        this.eName = this.template.querySelector('lightning-input').value;
+    }
+}
+
+JAVA SCRIP
+
+import { LightningElement } from 'lwc';
+
+export default class Lwc_welcome extends LightningElement {
+    
+    eName  
+    handlsubmit(event) {
+        this.eName = this.template.querySelector('lightning-input').value;
+    }
+}
