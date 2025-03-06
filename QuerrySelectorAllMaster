@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title=" QuerrySelector"> 
+        <p> Hello! {efName} {elName} </p>
+        <lightning-input label = "Employee First Name" value = {efName} name="fName"> </lightning-input>
+        <lightning-input label="Employee second Name" value= {elName} name="lName"> </lightning-input>
+        <lightning-button label = "Submit" onclick = {handlsubmit}></lightning-button>
+    </lightning-card>
+</template>
+
+import { LightningElement } from 'lwc';
+
+export default class Lwc_welcome extends LightningElement {
+    
+    eName
+    efName
+    elName
+
+    handlsubmit(event) {
+        // this.eName = this.template.querySelector('lightning-input').value; // single value 
+        
+       let input = this.template.querySelectorAll('lightning-input'); //collection in input its store all values
+        
+        input.forEach(function (element) {
+            if (element.name == 'fName')
+            {
+
+                this.efName = element.value;
+            }
+            else if (element.name == 'lName')
+            {
+                this.elName = element.value;
+            }
+         }, this);
+    }
+}
